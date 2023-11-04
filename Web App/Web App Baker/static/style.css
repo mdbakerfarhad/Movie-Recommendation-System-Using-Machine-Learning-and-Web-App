@@ -30,7 +30,7 @@ body::-webkit-scrollbar{
     width:0;
 }
 
-.login { 
+.movierecommendation { 
 	width:300px;
 	height:300px;
 	margin-left:750px;
@@ -79,28 +79,6 @@ select {
 select:focus { 
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
 }
-
-select.option { 
-	height: auto;
-    width: 400px;
-	margin-top:20px; 	
-	background: rgba(255,255,255,0.6);
-	border: none;
-	outline: none;
-	padding: 10px;
-	font-size: 17px;
-	color: #333333;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 4px;
-	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
-	-webkit-transition: box-shadow .5s ease;
-	-moz-transition: box-shadow .5s ease;
-	-o-transition: box-shadow .5s ease;
-	-ms-transition: box-shadow .5s ease;
-	transition: box-shadow .5s ease;
-}
-
 
 
 .submit_btn{

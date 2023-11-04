@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML API</title>
+
 <head>
     <title>Movie Recommendations</title>
 </head>
+<style>
+    .submit_btn {
+        background-color: #4a77d4;
+        border-radius: 10px;
+        width: 400px;
+        margin-top: 30px;
+        font-size: 17px;
+        padding: 10px;
+        color: black;
+        border-color: black;
+        font-weight: bold;
+        margin-left:750px;
+    }
+
+    .submit_btn:hover,
+    .btn:active,
+    .btn.active,
+    .btn.disabled,
+    .btn[disabled] {
+        background-color: #B3A1F0;
+
+    }
+
+    .submit_btn:hover {
+        color: #333333;
+        text-decoration: none;
+        background-color: #e6e6e6;
+        background-position: 0 -15px;
+        -webkit-transition: background-position 0.1s linear;
+        -moz-transition: background-position 0.1s linear;
+        -ms-transition: background-position 0.1s linear;
+        -o-transition: background-position 0.1s linear;
+        transition: background-position 0.1s linear;
+    }
+</style>
+
 <body>
     <h1>Recommended Movies for "{{ title }}"</h1>
-    
+
     <ul>
         {% for movie in recommendations %}
-            <li>{{ recommendations }}</li>
-        {% endfor %}
+        <h4><li>{{ recommendations }}</li></h4><br>
+        <!-- {% endfor %} -->
     </ul>
+    <a href="/">
+        <button type="submit" class="submit_btn">Back To Home Page</button>
+    </a>
 
-    <a href="/">Back to Home</a>
 </body>
+
 </html>
