@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+<title>MRS</title>
+
+<head>
+    <title>Movie Recommendations System</title>
+</head>
+
+<body>
+    <div class="movierecommendation">
+        <div class="container">
+            <h1>Recommended Movies for - <span> {{ movie_name }}</span> </h1>
+            <ul>
+                {% for movie in recommendations %} <br>
+               <li> <h4>{{ recommendations }}</h4><br></li>
+                <!-- {% endfor %} -->
+            </ul>
+            <a href="/">
+                <button type="submit" class="submit_btn">Back To Home Page</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

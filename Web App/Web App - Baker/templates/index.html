@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>MRS</title>
+</head>
+
+
+<body>
+
+  <div class="movierecommendation">
+    <div class="container">
+      <div class=header>Movie Recommendation System Using Machine Learning </div>
+      <h5><p style="color: aqua;">By Md. Baker, Kazi Kaarima Nashia, Fatema Akter Rimi</p></h5>
+      <form action="/recommend" method="POST">
+        <label for="movie_name">Enter a movie: </label>
+        <select name="movie_name" id="movie_name" required>
+          {% for movie in movie_names %}
+          <option>{{ movie }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit" value="Get Recommendations" id="movie_title" name="title"
+          class="submit_btn">Recommend</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
