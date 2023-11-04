@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+  <div class="login">
+    <div class="container">
+      <div class=header>Movie Recommendation</div>
+      <!-- Main Input For Receiving Query to ML -->
+      <form action="/recommend" method="post">
+        <label for="movie_title">Enter a movie title:</label>
+        <!-- <input type="text" id="movie_title" name="title" placeholder="movie" required> -->
+        <select id="movie_title" name="title" required>
+          {% for movie in movie_titles %}
+          <option value="{{ movie }}">{{ movie }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit" id="movie_title" name="title" class="submit_btn">Recommend</button>
+      </form>
+
+      <br>
+      <!-- <br>
+      {% for each in recommended_movie %}
+      <h4>
+        {{ each }}
+      </h4>
+      {% endfor %} -->
+    </div>
+  </div>
+
+
+</body>
+
+</html>
