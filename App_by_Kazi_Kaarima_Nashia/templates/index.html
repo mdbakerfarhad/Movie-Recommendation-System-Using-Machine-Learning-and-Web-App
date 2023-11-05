@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body>
+   <div class="start">
+          <form action="/recommend" class="search-bar" method="POST">
+                <input type="text" class="search" name="movie_name" placeholder="Search for movies">
+                <button type="submit" name="submit">Recommend</button>
+     
+            </form>
+
+   <div>
+
+   <main>
+         <div class="movie-details">
+             {% for i in range(recommended_movie_titles|length)%}
+              <div class="movie-info">
+
+                   <h2 class="movie-title">{{recommended_movie_titles[i]}}</h2>
+                   <h3 class="genre">{{recommended_movie_genres[i]}}</h3>
+              </div>
+
+            
+              
+              {% endfor %}
+            </div>
+
+    </main>
+
+
+
+</body>
+</html>
