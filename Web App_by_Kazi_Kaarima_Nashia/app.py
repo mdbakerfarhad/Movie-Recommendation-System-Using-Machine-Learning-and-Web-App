@@ -1,14 +1,22 @@
 import requests
 import pandas as pd
 import pickle
+from sklearn.feature_extraction.text import  TfidfVectorizer
+from sklearn.metrics.pairwise import linear_kernel
 from flask import Flask,render_template, request
+
 
 app=Flask(__name__)
 
 movies= pd.read_csv("movies.csv")
-indices = pd.Series(movies.index, index=movies['title']).drop_duplicates()
 
-similarity = pickle.load(open('cosine_sim.pkl', 'rb'))
+# Create a TF-IDF matrix for movie genres
+tfidf= TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(movies['genres'])
+
+# Calculate cosine similarity
+similarity = linear_kernel(tfidf_matrix, tfidf_matrix)
+indices = pd.Series(movies.index, index=movies['title']).drop_duplicates()
 
 def get_recommendation(title):
     
