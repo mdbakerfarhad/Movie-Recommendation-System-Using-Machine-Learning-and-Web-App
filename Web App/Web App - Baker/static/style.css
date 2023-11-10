@@ -59,6 +59,7 @@ body::-webkit-scrollbar {
 
 
 select {
+	/* position: relative; */
 	height: auto;
 	width: 400px;
 	margin-top: 20px;
